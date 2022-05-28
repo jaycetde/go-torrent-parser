@@ -7,9 +7,9 @@ import (
 )
 
 type FileMetadata struct {
-	Path   []string `bencode:"path"`
-	PathUtf8   []string `bencode:"path.utf-8"`
-	Length int64    `bencode:"length"`
+	Path     []string `bencode:"path"`
+	PathUtf8 []string `bencode:"path.utf-8"`
+	Length   int64    `bencode:"length"`
 }
 
 type InfoMetadata struct {
@@ -17,9 +17,9 @@ type InfoMetadata struct {
 	Pieces      []byte `bencode:"pieces"`
 
 	// single file context
-	Name   string `bencode:"name"`
-	NameUtf8   string `bencode:"name.utf-8"`
-	Length int64  `bencode:"length"`
+	Name     string `bencode:"name"`
+	NameUtf8 string `bencode:"name.utf-8"`
+	Length   int64  `bencode:"length"`
 
 	// multi file context
 	Files bencode.RawMessage `bencode:"files"`
@@ -44,6 +44,9 @@ type File struct {
 }
 
 type Torrent struct {
+	// Torrent name
+	Name string
+
 	// Announce URL
 	Announce []string
 
